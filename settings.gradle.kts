@@ -27,10 +27,6 @@ dependencyResolutionManagement {
     }
 }
 
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
-
 // shared: the data, the search and every screen, in common Kotlin and Compose Multiplatform.
 // androidApp: the Android application around it. An iOS app would go in iosApp/ (see iosApp/README.md).
 include(":shared")
