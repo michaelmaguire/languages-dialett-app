@@ -15,7 +15,7 @@ Repo: https://github.com/michaelmaguire/languages-dialett-app.git
 Builds:
   - versionName: '1.0'
     versionCode: 1
-    commit: d7e582ebd9c656613cd92227423e120707269fe8
+    commit: 3599f86a556a8ebe4248fd0a903a1ef8686dbbf3
     subdir: androidApp
     gradle:
       - yes
