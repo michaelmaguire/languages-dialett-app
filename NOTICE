@@ -1,0 +1,14 @@
+Dialett da Rögn
+Copyright 2026 Michael Maguire
+
+The source code of this app is licensed under the Apache License, Version 2.0 (LICENSE).
+
+The dictionary, verb, grammar and expression content, in
+shared/src/commonMain/composeResources/files/dialett.json, is not covered by that licence. It comes from
+the dataset "Lexicon of the dialect of Rögn (Arogno), Ticino" by Michael Maguire, based on the course Cors
+da dialett da Rögn taught by Guido Casellini, https://github.com/michaelmaguire/languages-dialett, and is
+licensed under the Creative Commons Attribution 4.0 International licence (CC BY 4.0),
+https://creativecommons.org/licenses/by/4.0/. That repository lists the authors of the texts it draws on.
+
+The app icon and store graphics show the flag of the comune of Arogno, in the public domain: Gastone
+Cambin, Armoriale dei Comuni Ticinesi (Lugano, 1953), via Wikimedia Commons (File:CHE_Arogno_Flag.svg).

@@ -16,7 +16,7 @@ class DataSearchTest {
     @Test
     fun everythingIsThere() {
         assertTrue(lib.data.dictionary.size > 1400, "words: ${lib.data.dictionary.size}")
-        assertTrue(lib.data.verbs.size >= 140)
+        assertTrue(lib.data.verbs.size >= 130, "verbs: ${lib.data.verbs.size}")
         assertEquals(13, lib.data.grammar.size)
     }
 
@@ -54,5 +54,13 @@ class DataSearchTest {
     fun anExpressionListsItsWords() {
         val words = lib.wordsIn("In boca al lüf").map { it.first }
         assertTrue(words.any { "lüf" in it }, words.toString())
+    }
+
+    @Test
+    fun aVerbWithAParticleFindsItsBaseVerb() {
+        // na föra has no page of its own since 2026-11-10: it's on the page of na
+        val hit = lib.index.search("na fora").first { it.kind == Kind.VERB }
+        assertEquals("na föra", hit.title)
+        assertEquals("na", lib.verb((hit.destination as Destination.VerbPage).id)?.dialect?.substringBefore(" "))
     }
 }

@@ -1,0 +1,26 @@
+Categories:
+  - Science & Education
+  - Translation & Dictionary
+License: Apache-2.0
+AuthorName: Michael Maguire
+WebSite: https://github.com/michaelmaguire/languages-dialett
+SourceCode: https://github.com/michaelmaguire/languages-dialett-app
+IssueTracker: https://github.com/michaelmaguire/languages-dialett/issues
+
+AutoName: Dialett da Rögn
+
+RepoType: git
+Repo: https://github.com/michaelmaguire/languages-dialett-app.git
+
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: v1.0
+    subdir: androidApp
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: '1.0'
+CurrentVersionCode: 1

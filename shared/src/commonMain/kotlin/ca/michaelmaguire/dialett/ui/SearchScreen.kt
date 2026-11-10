@@ -21,6 +21,12 @@ import androidx.compose.runtime.produceState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.LinkAnnotation
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withLink
 import androidx.compose.ui.unit.dp
 import ca.michaelmaguire.dialett.data.Library
 import ca.michaelmaguire.dialett.search.Hit
@@ -37,6 +43,12 @@ private enum class Filter(val label: String, val kinds: Set<Kind>) {
     PHRASES("Phrases", setOf(Kind.EXPRESSION)),
     GRAMMAR("Grammar", setOf(Kind.GRAMMAR)),
 }
+
+/** The repository the app's content comes from, with the course's sources, PDFs and full attributions. */
+const val REPO = "https://github.com/michaelmaguire/languages-dialett"
+
+/** The privacy policy Google Play requires, linked from the store listing and from here. */
+const val PRIVACY = "https://www.michaelmaguire.ca/dialett-da-rogn/privacy/"
 
 /** Results of each kind shown under "All" before "Show all". */
 private const val PREVIEW = 6
@@ -114,10 +126,22 @@ private fun Intro(lib: Library) {
     val d = lib.data
     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
         Text("The dialect of Rögn (Arogno)", style = MaterialTheme.typography.titleLarge)
+        // the credit as the books' covers and title pages give it (languages-dialett, pipeline/templates/)
+        RichText("from the lessons of **Guido Casellini**\ncompiled by **Michael Maguire**", style = MaterialTheme.typography.bodyLarge)
         Text(
             "${d.dictionary.size} words, ${d.verbs.size} verbs, " +
                 "${d.expressions.sumOf { t -> t.sections.sumOf { it.entries.size } }} expressions and " +
-                "${d.grammar.size} grammar chapters from Guido Casellini's course.",
+                "${d.grammar.size} grammar chapters from the course Cors da dialett da Rögn.",
+            style = MaterialTheme.typography.bodyMedium,
+        )
+        Text(
+            buildAnnotatedString {
+                val link = TextLinkStyles(SpanStyle(color = MaterialTheme.colorScheme.primary, textDecoration = TextDecoration.Underline))
+                append("Sources, printable books and attributions: ")
+                withLink(LinkAnnotation.Url(REPO, link)) { append("github.com/michaelmaguire/languages-dialett") }
+                append("\nThe app collects no data: ")
+                withLink(LinkAnnotation.Url(PRIVACY, link)) { append("privacy policy") }
+            },
             style = MaterialTheme.typography.bodyMedium,
         )
         Text(

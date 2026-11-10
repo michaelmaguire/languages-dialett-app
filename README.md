@@ -27,21 +27,34 @@ scripts/update-data.sh
 
 ## Build and run
 
-Builds in the `android-dev` container (ansible-config, `doc/android-dev.md`). From this folder:
+Needs a JDK (17 or newer) and the Android SDK with platform 37, or Android Studio, which has both. Gradle
+comes with the repository (`./gradlew`). From this folder:
 
 ```bash
-android-dev bash -c 'cd ~/code/michaelmaguire/languages-dialett-app && ./gradlew :shared:testAndroidHostTest :androidApp:assembleDebug'
+./gradlew :shared:testAndroidHostTest :androidApp:assembleDebug
 ```
 
-Install on the emulator or the phone (USB debugging on):
+Install on an emulator or a phone with USB or wireless debugging on:
 
 ```bash
-android-dev adb install -r ~/code/michaelmaguire/languages-dialett-app/androidApp/build/outputs/apk/debug/androidApp-debug.apk
+adb install -r androidApp/build/outputs/apk/debug/androidApp-debug.apk
 ```
 
-Or open the folder in Android Studio and run `androidApp`.
+Or open the folder in Android Studio and run `androidApp`. A release build (`:androidApp:assembleRelease`,
+`:androidApp:bundleRelease`) is signed only where `~/.gradle/gradle.properties` names a signing key
+(see `androidApp/build.gradle.kts`); elsewhere it comes out unsigned, which is what F-Droid builds.
 
 ## Tests
 
 `shared/src/commonTest` (accent folding) and `shared/src/androidHostTest` (the real data file: counts, and
 searches whose answer is known: *buta* → *bütà*, *bütavum* → its verb, *casa* → *cà*).
+
+## Publishing
+
+The Google Play listing (texts, graphics, privacy policy) and the steps to publish: [store/README.md](store/README.md).
+
+## Licence
+
+The code is Apache-2.0 ([LICENSE](LICENSE)). The content in `dialett.json` is CC BY 4.0, from
+[languages-dialett](https://github.com/michaelmaguire/languages-dialett); the flag is public domain.
+Details in [NOTICE](NOTICE).

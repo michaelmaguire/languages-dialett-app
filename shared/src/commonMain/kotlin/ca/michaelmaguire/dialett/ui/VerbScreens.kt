@@ -65,7 +65,7 @@ fun VerbScreen(lib: Library, nav: Navigator, id: String, highlight: String) {
     val rows = remember(id, perRow) { moods.mapValues { (_, t) -> t.chunked(perRow) } }
     // open at the row with the form searched for. Items: the header card, then per mood a heading and its rows
     val first = remember(id, mark, perRow) {
-        var item = 1
+        var item = if (v.also.isNotEmpty()) 2 else 1   // the header card, and the "Also" card if any
         var found = 0
         loop@ for ((_, rs) in rows) {
             item++
@@ -92,6 +92,18 @@ fun VerbScreen(lib: Library, nav: Navigator, id: String, highlight: String) {
                     style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline,
                     modifier = Modifier.padding(top = 4.dp),
                 )
+            }
+        }
+        if (v.also.isNotEmpty()) item {
+            InfoCard {
+                Text("Also", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+                v.also.forEach { a ->
+                    Column(Modifier.padding(top = 6.dp)) {
+                        Text(a.dialect, style = MaterialTheme.typography.titleMedium)
+                        Text(listOf(a.italian, a.english).filter(String::isNotEmpty).joinToString(" · "),
+                            style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                }
             }
         }
         for ((mood, rs) in rows) {

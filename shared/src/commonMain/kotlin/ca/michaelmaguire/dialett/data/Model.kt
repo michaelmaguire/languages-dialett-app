@@ -60,7 +60,12 @@ data class Verb(
     val found: String = "",
     val sources: List<String> = emptyList(),
     val tenses: List<Tense>,
+    /** Verbs with a particle (na giò, tacà sü), which have no page of their own and are shown on this one. */
+    val also: List<PhrasalVerb> = emptyList(),
 )
+
+@Serializable
+data class PhrasalVerb(val dialect: String, val italian: String = "", val english: String = "")
 
 @Serializable
 data class Tense(val mood: String, val name: String, val forms: List<Form>)

@@ -1,0 +1,16 @@
+Il dialetto lombardo di Rögn (Arogno), nel distretto di Lugano in Ticino, sul telefono: un dizionario, le coniugazioni complete dei verbi, una breve grammatica e più di mille modi di dire e frasi, tutto da cercare in una volta sola, in dialetto, in italiano o in inglese.
+
+Dalle lezioni di Guido Casellini, raccolte da Michael Maguire.
+
+• Dizionario: circa 1500 parole, Dialett → Italiano → English, con categoria grammaticale, genere, plurale, la regione di ogni forma e note per chi impara
+• Verbi: le coniugazioni di 136 verbi, tutti i tempi e i modi; i verbi con particella (na föra, tacà sü) sono nella pagina del verbo di base
+• Grammatica: 13 capitoli, spiegati in italiano e in inglese uno accanto all'altro, con esempi del corso glossati
+• Espressioni: più di 1100 proverbi, modi di dire e frasi di tutti i giorni, raggruppati per argomento, ognuno collegato alle parole che contiene
+
+Una sola ricerca per tutto. Gli accenti sono facoltativi (buta trova bütà), una forma coniugata trova il suo verbo (bütavum porta a bütà, imperfetto) e qualche parola trova un modo di dire (boca lüf).
+
+L'ortografia è quella dell'insegnante, varianti comprese. Le forme segnate con † sono dedotte dalle regole del corso e non si trovano in una lezione; le voci segnate con ⚠ sono ancora da verificare con l'insegnante.
+
+Funziona senza connessione. Nessun account, nessuna pubblicità, nessun tracciamento: l'app non ha alcun accesso a internet.
+
+I contenuti vengono dal dataset aperto github.com/michaelmaguire/languages-dialett (CC BY 4.0), dove si trovano anche i libri da stampare, l'elenco dei documenti di origine e i ringraziamenti completi.

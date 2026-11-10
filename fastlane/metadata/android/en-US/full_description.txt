@@ -1,0 +1,16 @@
+The Lombard dialect of Rögn (Arogno), in the Lugano district of Ticino, Switzerland, on your phone: a dictionary, full verb tables, a short grammar and over a thousand sayings and phrases, all searchable at once in the dialect, Italian or English.
+
+From the lessons of Guido Casellini, compiled by Michael Maguire.
+
+• Dictionary: about 1,500 words, Dialett → Italiano → English, with part of speech, gender, plurals, the region of each form and notes for learners
+• Verbs: conjugation tables for 136 verbs, every tense and mood, with verbs with a particle (na föra, tacà sü) on their base verb's page
+• Grammar: 13 chapters, explained in Italian and English side by side, with glossed examples from the course
+• Expressions: more than 1,100 sayings, idioms and everyday phrases, grouped by topic, each linked to the words in it
+
+One search covers everything. Accents are optional (buta finds bütà), a conjugated form finds its verb (bütavum leads to bütà, imperfetto), and a few words find a saying (boca lüf).
+
+The course's own spelling is kept as the teacher writes it, variants included. Forms marked † were worked out from the patterns in the course rather than found in a lesson; entries marked ⚠ are still to be checked with the teacher.
+
+Works entirely offline. No account, no ads, no tracking: the app has no internet access at all.
+
+The content comes from the open dataset at github.com/michaelmaguire/languages-dialett (CC BY 4.0), which also has the printable books, the list of source documents and the full attributions.

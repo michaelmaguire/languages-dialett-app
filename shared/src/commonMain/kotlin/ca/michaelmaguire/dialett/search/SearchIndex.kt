@@ -84,6 +84,14 @@ class SearchIndex(data: AppData) {
                 title = v.dialect, subtitle = "${v.italian} · ${v.english}", detail = v.verbClass,
                 destination = Destination.VerbPage(v.id),
             ))
+            // a verb with a particle (na föra) is found as a verb, and leads to its base verb's page
+            for (a in v.also) {
+                add(Doc(
+                    Kind.VERB, listOf(Field(a.dialect, 3), Field(a.italian, 2), Field(a.english, 2)),
+                    title = a.dialect, subtitle = "${a.italian} · ${a.english}", detail = "see ${v.dialect}",
+                    destination = Destination.VerbPage(v.id),
+                ))
+            }
             // each distinct form once, with every tense and person it is
             val places = LinkedHashMap<String, MutableList<String>>()
             for (t in v.tenses) for (f in t.forms) {
